@@ -6,29 +6,16 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
+# Minimalistic i3status bar with only memory and time shown
+
 general {
         colors = true
         interval = 5
 }
 
-#order += "ipv6"
-#order += "wireless _first_"
-#order += "ethernet _first_"
 order += "battery all"
-#order += "disk /"
-#order += "load"
 order += "memory"
 order += "tztime local"
-
-wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
-}
-
-ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
-}
 
 battery all {
 	format = "%status %percentage %remaining" 
@@ -41,14 +28,6 @@ battery all {
         low_threshold = 10
 	integer_battery_capacity = true
 	last_full_capacity=true
-}
-
-disk "/" {
-        format = "%avail"
-}
-
-load {
-        format = "%1min"
 }
 
 memory {
